@@ -9,5 +9,6 @@ const router = Router(); //uso el metodo router de xpress para crear la ruta
 //y el metod que la resuelve
 
 router.get("/usuarios", usuarioCtr.obtenerUsuarios);
+router.get("/usuarios/:id", usuarioCtr.getUserById);
 
 export default router;
