@@ -10,5 +10,9 @@ const router = Router(); //uso el metodo router de xpress para crear la ruta
 
 router.get("/usuarios", usuarioCtr.obtenerUsuarios);
 router.get("/usuarios/:id", usuarioCtr.getUserById);
+router.get("/usuarios/:id", usuarioCtr.obtenerUsuarioId);
+router.post("/usuarios", usuarioCtr.crearUsuario);
+router.delete("/usuarios/:id", usuarioCtr.borrarUsuario);
+router.put("/usuarios/:id", usuarioCtr.actualizarUsuario);
 
 export default router;
