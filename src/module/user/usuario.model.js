@@ -1,5 +1,6 @@
 
-import db from "../../config/dbconexion.js"
+import db from "../../config/dbconexion.js";
+import bcrypt from "bcryptjs";
 
 export const UserModel = {
    
@@ -11,7 +12,7 @@ export const UserModel = {
     return rows;
   },
    findById: async (id) => {
-    const sql = "SELECT * FROM users WHERE id_usuario=?";
+    const sql = "SELECT * FROM usuario WHERE id_usuario=?";
     //almacenamos la respuesta en un arreglo
     const [rows] = await db.query(sql, [id]);
     return rows;
