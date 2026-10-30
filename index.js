@@ -1,17 +1,17 @@
-import express from "express"; // importamos la libreria
+import express from "express";
 import cors from "cors";
-import RutaUser from "./src/module/user/usuario.routes.js"
- const app  = express(); // metodo contructor de la libreria
-  const PORT = 4100; //puerto donde desplegaremos el server
+import RutaUser from "./src/module/user/usuario.routes.js";
+import RutaProducto from "./src/module/productos/producto.routes.js";
 
-app.use(express.json()); // Para que el servidor entienda JSON en el body
+const app = express();
+const PORT = 4100;
+
+app.use(express.json());
 app.use(cors());
 
 app.use("/api", RutaUser);
+app.use("/api", RutaProducto);
 
-//creamos una instancia de la libreria express en la constante app
-
-  app.listen(PORT,() =>{
-console.log(`SERVIDOR iniciado en el puerto ${PORT}`)
-})
-
+app.listen(PORT, () => {
+  console.log(`SERVIDOR iniciado en el puerto ${PORT}`);
+});
